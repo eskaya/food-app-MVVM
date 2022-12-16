@@ -1328,6 +1328,7 @@ color flamingo
 color foreground_material_dark
 color foreground_material_light
 color fuel_yellow
+color genoa
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -1832,7 +1833,6 @@ color purple_500
 color purple_700
 color ripple_material_dark
 color ripple_material_light
-color sandy_brown
 color secondary_color
 color secondary_text_default_material_dark
 color secondary_text_default_material_light
@@ -2004,6 +2004,7 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen horizontal_offset
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
@@ -2461,6 +2462,13 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen text_12
+dimen text_14
+dimen text_16
+dimen text_18
+dimen text_20
+dimen text_22
+dimen text_24
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -2469,6 +2477,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+dimen vertical_offset
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
