@@ -11,9 +11,9 @@
     <!-- MY COLORS  -->
     <color name="flamingo">#ef5f39</color>
     <color name="secondary_color">#1f9acd</color>
-    <color name="primary_color">#13785b</color>
+    <color name="genoa">#13785b</color>
     <color name="fuel_yellow">#e8af20</color>
-    <color name="sandy_brown">#f29461</color>
+    <color name="primary_color">#f29461</color>
     <color name="wewak">#f5a8b0</color>
 
 </resources>
