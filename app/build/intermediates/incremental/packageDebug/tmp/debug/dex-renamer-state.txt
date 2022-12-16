@@ -1,13 +1,13 @@
-#Fri Dec 16 10:31:55 TRT 2022
-path.4=15/classes.dex
-path.3=2/classes.dex
+#Fri Dec 16 11:51:07 TRT 2022
+path.4=2/classes.dex
+path.3=15/classes.dex
 path.2=10/classes.dex
 path.1=0/classes.dex
 path.6=9/classes.dex
 path.5=3/classes.dex
 path.0=classes.dex
-base.4=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
-base.3=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+base.4=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+base.3=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
 base.2=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
 base.1=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.0=/Users/esrakaya/Desktop/android-projects/food-app-MVVM/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex

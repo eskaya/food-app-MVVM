@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
             R.drawable.ic_favorite,
             R.drawable.ic_category
         )
+        val nameArray = arrayOf(
+            R.drawable.ic_home,
+            R.drawable.ic_favorite,
+            R.drawable.ic_category
+        )
+
 
         val adapter = BottomNavigationBarAdapter(supportFragmentManager, lifecycle)
         binding.viewPager.adapter = adapter
