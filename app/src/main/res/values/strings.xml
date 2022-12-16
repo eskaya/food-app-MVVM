@@ -2,4 +2,8 @@
     <string name="app_name">food-app-MVVM</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="homePage_title">What would you like to eat?</string>
+    <string name="homePage_searchHint">Search you food..</string>
+    <string name="homePage_overPopularItems">Over Popular Items</string>
+    <string name="homePage_category">Category</string>
 </resources>
