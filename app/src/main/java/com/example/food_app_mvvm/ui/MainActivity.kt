@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         init()
         setContentView(binding.root)
-        print("")
     }
 
     private fun init() {
@@ -24,18 +23,14 @@ class MainActivity : AppCompatActivity() {
             R.drawable.ic_favorite,
             R.drawable.ic_category
         )
-        val nameArray = arrayOf(
-            R.drawable.ic_home,
-            R.drawable.ic_favorite,
-            R.drawable.ic_category
-        )
-
 
         val adapter = BottomNavigationBarAdapter(supportFragmentManager, lifecycle)
         binding.viewPager.adapter = adapter
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
-            tab.setIcon(iconArray[position])
+            tab.setIcon(
+                iconArray[position]
+            )
         }.attach()
     }
 

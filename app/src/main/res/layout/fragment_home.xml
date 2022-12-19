@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context="com.ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -43,7 +43,7 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivSearch"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:src="@drawable/ic_search"
@@ -64,7 +64,7 @@
                 android:textSize="@dimen/text_16"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView" />
+                app:layout_constraintStart_toEndOf="@+id/ivSearch" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -94,6 +94,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/ivHealthyLifeStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
