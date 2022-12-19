@@ -18,7 +18,6 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
-        println()
 
     }
 
