@@ -6,12 +6,15 @@ food-app-MVVM is a mobile application.MVVM architecture is used.
 **Builder**: Esra Kaya \ esra.kaya.5255@gmail.com
 
 
-#### Notes
+#### Tech Stack
 
 - Kotlin
 - Retrofit
-- Room Database
+- View Binding
+- Live Data
 - OkHttp
+- Room Database
+
 
 
 
