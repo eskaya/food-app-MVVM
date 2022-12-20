@@ -18,9 +18,9 @@
             android:layout_height="match_parent"
             app:collapsedTitleTextColor="@color/white"
             app:contentScrim="@color/genoa"
+            app:expandedTitleTextColor="@color/white"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="Meal Name"
-            app:expandedTitleTextColor="@color/white">
+            app:title="Meal Name">
 
             <ImageView
                 android:id="@+id/ivMeal"
@@ -40,6 +40,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonLike"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -48,6 +49,21 @@
         android:baselineAlignBottom="false"
         android:clickable="true"
         android:src="@drawable/ic_favorite"
+        app:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonYoutube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:baselineAlignBottom="false"
+        android:layout_marginBottom="75dp"
+        app:layout_anchor="@id/floatingActionButtonLike"
+        app:layout_anchorGravity="top|end"
+        android:backgroundTint="@color/thunderbird"
+        android:background="@color/thunderbird"
+        android:clickable="true"
+        android:src="@drawable/ic_youtube"
         app:tint="@color/white" />
 
     <androidx.core.widget.NestedScrollView
@@ -153,14 +169,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/source_sans_pro_regular"
                 android:lineSpacingExtra="5dp"
                 android:text="Meal description"
                 android:textSize="@dimen/text_16"
-                android:layout_marginTop="12dp"
-                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
                 app:layout_constraintEnd_toEndOf="@id/guidelineRight"
-                app:layout_constraintTop_toBottomOf="@id/barrier"/>
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/barrier" />
 
             <androidx.constraintlayout.widget.Barrier
                 android:id="@+id/barrier"
