@@ -11,12 +11,14 @@ import com.bumptech.glide.Glide
 import com.example.food_app_mvvm.databinding.FragmentHomeBinding
 import com.example.food_app_mvvm.ui.MainActivity
 import com.example.food_app_mvvm.ui.detail.DetailActivity
+import com.example.food_app_mvvm.utils.Constants
 import com.example.food_app_mvvm.viewModels.HomeViewModel
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: HomeViewModel
+    private lateinit var mealId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +36,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         viewModel.getRandomMeal()
         observerRandomMeal()
     }
@@ -42,6 +43,7 @@ class HomeFragment : Fragment() {
     private fun listeners() {
         binding.ivRandomMeal.setOnClickListener {
             val intent = Intent((requireContext() as MainActivity), DetailActivity::class.java)
+            intent.putExtra(Constants.MEAL_ID, mealId)
             startActivity(intent)
         }
     }
@@ -49,10 +51,12 @@ class HomeFragment : Fragment() {
     private fun observerRandomMeal() {
         viewModel.observeRandomMealLiveData().observe(viewLifecycleOwner) { data ->
             data.let {
+                mealId = data.idMeal
                 Glide.with(this@HomeFragment)
                     .load(data.strMealThumb)
                     .into(binding.ivRandomMeal)
             }
+
         }
     }
 }
