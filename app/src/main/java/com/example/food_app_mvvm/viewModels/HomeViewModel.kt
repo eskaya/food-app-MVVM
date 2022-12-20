@@ -17,13 +17,11 @@ class HomeViewModel : ViewModel() {
 
     fun getRandomMeal() {
         RetrofitInstance.api.getRandomMealList().enqueue(object : Callback<MealList> {
-            override fun onResponse(
-                call: Call<MealList>,
-                response: Response<MealList>
-            ) {
+            override fun onResponse(call: Call<MealList>, response: Response<MealList>) {
                 if (response.body() != null) {
                     randomMealLiveData.value = response.body()!!.meals[0]
                 } else {
+                    Log.d("Data null", response.errorBody().toString())
                     return
                 }
             }

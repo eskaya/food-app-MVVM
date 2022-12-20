@@ -1,13 +1,16 @@
 package com.example.food_app_mvvm.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.food_app_mvvm.databinding.FragmentHomeBinding
+import com.example.food_app_mvvm.ui.MainActivity
+import com.example.food_app_mvvm.ui.detail.DetailActivity
 import com.example.food_app_mvvm.viewModels.HomeViewModel
 
 class HomeFragment : Fragment() {
@@ -17,7 +20,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -25,6 +28,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater)
+        listeners()
         return binding.root
     }
 
@@ -35,11 +39,20 @@ class HomeFragment : Fragment() {
         observerRandomMeal()
     }
 
+    private fun listeners() {
+        binding.ivRandomMeal.setOnClickListener {
+            val intent = Intent((requireContext() as MainActivity), DetailActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
     private fun observerRandomMeal() {
         viewModel.observeRandomMealLiveData().observe(viewLifecycleOwner) { data ->
-            Glide.with(this@HomeFragment)
-                .load(data!!.strMealThumb)
-                .into(binding.ivHealthyLifeStyle)
+            data.let {
+                Glide.with(this@HomeFragment)
+                    .load(data.strMealThumb)
+                    .into(binding.ivRandomMeal)
+            }
         }
     }
 }
