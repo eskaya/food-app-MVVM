@@ -1,11 +1,11 @@
 package com.example.food_app_mvvm.ui.detail
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.example.food_app_mvvm.data.pojo.Meal
@@ -25,7 +25,6 @@ class DetailActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this)[MealDetailViewModel::class.java]
         setContentView(binding.root)
         init()
-
     }
 
     private fun init() {
@@ -36,12 +35,20 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun observerMealDetail() {
+
+        binding.progressBar.visibility = View.GONE
+
         viewModel.observerMealDetailList().observe(this) { data ->
-            data?.let {
-                mealDetail = data
+            if (data != null) {
+                Toast.makeText(this, "data != null", Toast.LENGTH_SHORT)
                 loadViews(data)
+            } else {
+                Toast.makeText(this, "else", Toast.LENGTH_SHORT)
+                binding.errorGroup.visibility = View.VISIBLE
+                binding.coordinatorLayout.visibility = View.GONE
             }
         }
+
     }
 
     private fun loadViews(data: Meal) {
