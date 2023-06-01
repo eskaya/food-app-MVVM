@@ -1,6 +1,6 @@
 package com.example.food_app_mvvm.data.pojo
 
-data class Category(
+data class CategoryMeals(
     val strMeal: String,
     val strMealThumb: String,
     val idMela: String

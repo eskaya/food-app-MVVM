@@ -1,14 +1,12 @@
 package com.example.food_app_mvvm.viewModels
 
-import android.R.id
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.food_app_mvvm.data.pojo.Meal
 import com.example.food_app_mvvm.data.pojo.MealList
-import com.example.food_app_mvvm.utils.Resource
-import com.example.food_app_mvvm.utils.RetrofitInstance
+import com.example.food_app_mvvm.di.RetrofitInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -34,27 +32,6 @@ class MealDetailViewModel : ViewModel() {
             }
         })
     }
-
-//    fun getDetail(id: String?): LiveData<Resource<Meal>>? {
-//        val myBeanClass: MutableLiveData<Resource<Meal>> = MutableLiveData<Resource<Meal>>()
-//       // val apiInterface: ApiInterface = ApiClient().getClient().create(ApiInterface::class.java)
-//       // val call: Call<Meal> = apiInterface.getData(id)
-//
-//        RetrofitInstance.api.getMealDetail(id).enqueue(object : Callback<Meal?> {
-//            override fun onResponse(call: Call<Meal?>, response: Response<Meal?>) {
-//                if (response.body() != null) {
-//                    val body: Meal? = response.body()
-//                    myBeanClass.setValue(Resource.success(body))
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Meal?>, t: Throwable) {
-//                myBeanClass.setValue(Resource.error(t.message, null))
-//            }
-//        })
-//        return myBeanClass
-//    }
-
 
     fun observerMealDetailList(): LiveData<Meal> {
         return mealDetailLiveData

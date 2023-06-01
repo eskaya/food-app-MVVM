@@ -1,4 +1,4 @@
-package com.example.food_app_mvvm.utils
+package com.example.food_app_mvvm.di
 
 import com.example.food_app_mvvm.data.service.FoodApi
 import okhttp3.OkHttpClient
