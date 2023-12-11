@@ -16,8 +16,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://www.themealdb.com/api/json/v1/1/"'
+        }
         release {
+            buildConfigField "String", "BASE_URL", '"https://www.themealdb.com/api/json/v1/1/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
