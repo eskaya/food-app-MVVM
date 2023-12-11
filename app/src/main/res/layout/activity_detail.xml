@@ -1,268 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.detail.DetailActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/coordinatorLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        tools:context=".ui.detail.DetailActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:background="@color/secondary_color">
-
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/collapsingToolbarLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:collapsedTitleTextColor="@color/white"
-                app:contentScrim="@color/genoa"
-                app:expandedTitleTextColor="@color/white"
-                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-                app:title="Meal Name">
-
-                <ImageView
-                    android:id="@+id/ivMeal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    app:layout_collapseMode="parallax" />
-
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?actionBarSize"
-                    app:layout_collapseMode="pin" />
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonLike"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:baselineAlignBottom="false"
-            android:clickable="true"
-            android:src="@drawable/ic_favorite"
-            app:tint="@color/white" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButtonYoutube"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="75dp"
-            android:background="@color/thunderbird"
-            android:backgroundTint="@color/thunderbird"
-            android:baselineAlignBottom="false"
-            android:clickable="true"
-            android:src="@drawable/ic_youtube"
-            app:layout_anchor="@id/floatingActionButtonLike"
-            app:layout_anchorGravity="top|end"
-            app:tint="@color/white" />
-
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/nestedScrollView"
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+            android:visibility="gone">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="280dp"
+                android:background="@color/secondary_color">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cvCategory"
-                    android:layout_width="0dp"
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsingToolbarLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:strokeColor="@color/genoa"
-                    app:strokeWidth="0.5dp">
+                    app:collapsedTitleTextColor="@color/white"
+                    app:contentScrim="@color/genoa"
+                    app:expandedTitleTextColor="@color/white"
+                    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                    app:title="Meal Name">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <ImageView
+                        android:id="@+id/ivMeal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp">
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:layout_collapseMode="parallax" />
 
-                        <TextView
-                            android:id="@+id/tvCategory"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:fontFamily="@font/source_sans_pro_regular"
-                            android:lineSpacingExtra="5dp"
-                            android:text="Beef"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_16"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/ivCategory"
-                            app:layout_constraintTop_toTopOf="@+id/ivCategory" />
-
-                        <ImageView
-                            android:id="@+id/ivCategory"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/ic_category"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/primary_color" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cvLocation"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-                    app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:strokeColor="@color/genoa"
-                    app:strokeWidth="0.5dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="6dp">
+                        android:layout_height="?actionBarSize"
+                        app:layout_collapseMode="pin" />
 
-                        <TextView
-                            android:id="@+id/tvLocation"
-                            android:layout_width="0dp"
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:baselineAlignBottom="false"
+                android:clickable="true"
+                android:src="@drawable/ic_favorite"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButtonYoutube"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="75dp"
+                android:background="@color/thunderbird"
+                android:backgroundTint="@color/thunderbird"
+                android:baselineAlignBottom="false"
+                android:clickable="true"
+                android:src="@drawable/ic_youtube"
+                app:layout_anchor="@id/floatingActionButtonLike"
+                app:layout_anchorGravity="top|end"
+                app:tint="@color/white" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvCategory"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineCenter"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/genoa"
+                        app:strokeWidth="0.5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:fontFamily="@font/source_sans_pro_regular"
-                            android:lineSpacingExtra="5dp"
-                            android:text="Location"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_16"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/ivLocation"
-                            app:layout_constraintTop_toTopOf="@+id/ivLocation" />
+                            android:padding="6dp">
 
-                        <ImageView
-                            android:id="@+id/ivLocation"
-                            android:layout_width="23dp"
-                            android:layout_height="23dp"
-                            android:src="@drawable/ic_place_marker"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:tint="@color/primary_color" />
+                            <TextView
+                                android:id="@+id/tvCategory"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/source_sans_pro_regular"
+                                android:lineSpacingExtra="5dp"
+                                android:text="Beef"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/ivCategory"
+                                app:layout_constraintTop_toTopOf="@+id/ivCategory" />
+
+                            <ImageView
+                                android:id="@+id/ivCategory"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/ic_category"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/primary_color" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                        app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeColor="@color/genoa"
+                        app:strokeWidth="0.5dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="6dp">
+
+                            <TextView
+                                android:id="@+id/tvLocation"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:fontFamily="@font/source_sans_pro_regular"
+                                android:lineSpacingExtra="5dp"
+                                android:text="Location"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/text_16"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/ivLocation"
+                                app:layout_constraintTop_toTopOf="@+id/ivLocation" />
+
+                            <ImageView
+                                android:id="@+id/ivLocation"
+                                android:layout_width="23dp"
+                                android:layout_height="23dp"
+                                android:src="@drawable/ic_place_marker"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/primary_color" />
 
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.card.MaterialCardView>
 
-                <TextView
-                    android:id="@+id/tvDescription"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="16dp"
-                    android:fontFamily="@font/source_sans_pro_regular"
-                    android:lineSpacingExtra="5dp"
-                    android:text="Meal description"
-                    android:textSize="@dimen/text_16"
-                    app:layout_constraintEnd_toEndOf="@id/guidelineRight"
-                    app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-                    app:layout_constraintTop_toBottomOf="@id/barrier" />
+                    <TextView
+                        android:id="@+id/tvDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/source_sans_pro_regular"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Meal description"
+                        android:textSize="@dimen/text_16"
+                        app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+                        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                        app:layout_constraintTop_toBottomOf="@id/barrier" />
 
-                <androidx.constraintlayout.widget.Barrier
-                    android:id="@+id/barrier"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:barrierDirection="bottom"
-                    app:constraint_referenced_ids="cvCategory,cvLocation" />
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="cvCategory,cvLocation" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guidelineCenter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.5" />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineCenter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guidelineLeft"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_begin="@dimen/horizontal_offset" />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="@dimen/horizontal_offset" />
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/guidelineRight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_end="@dimen/horizontal_offset" />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guidelineRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="@dimen/horizontal_offset" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.core.widget.NestedScrollView>
+            </androidx.core.widget.NestedScrollView>
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <ImageView
-        android:id="@+id/ivError"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="170dp"
-        android:src="@drawable/ic_error"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/ivError"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="170dp"
+            android:src="@drawable/ic_error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvError"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/source_sans_pro_bold"
-        android:lineSpacingExtra="5dp"
-        android:text="An unexpected error occurred"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivError" />
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/source_sans_pro_bold"
+            android:lineSpacingExtra="5dp"
+            android:text="An unexpected error occurred"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivError" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/errorGroup"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"
-        app:constraint_referenced_ids="ivError, tvError" />
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/errorGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:constraint_referenced_ids="ivError, tvError" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/errorGroup"
-        app:layout_constraintWidth="80dp" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/errorGroup"
+            app:layout_constraintWidth="80dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
