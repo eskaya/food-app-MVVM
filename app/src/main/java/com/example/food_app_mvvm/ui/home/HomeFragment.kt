@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
             intent.putExtra(Constants.MEAL_ID, mealId)
             startActivity(intent)
              */
-            val action = HomeFragmentDirections.actionHomeFragmentToDetailActivity()
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailActivity(mealId)
             Navigation.findNavController(it).navigate(action)
         }
     }

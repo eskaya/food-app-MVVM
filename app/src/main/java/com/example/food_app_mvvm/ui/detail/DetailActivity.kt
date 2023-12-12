@@ -1,17 +1,15 @@
 package com.example.food_app_mvvm.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.example.food_app_mvvm.data.pojo.Meal
 import com.example.food_app_mvvm.databinding.ActivityDetailBinding
-import com.example.food_app_mvvm.utils.Constants
 import com.example.food_app_mvvm.viewModels.MealDetailViewModel
+
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -29,8 +27,13 @@ class DetailActivity : AppCompatActivity() {
 
     private fun init() {
         binding.progressBar.visibility = View.VISIBLE
-       // mealId = intent.getStringExtra(Constants.MEAL_ID).toString()
-        mealId = "52982"
+        // mealId = intent.getStringExtra(Constants.MEAL_ID).toString()
+        // mealId = "52982"
+        
+        intent?.extras?.let {
+            mealId = DetailActivityArgs.fromBundle(it).mealId
+        }
+
         viewModel.getMealDetail(mealId)
         observerMealDetail()
     }

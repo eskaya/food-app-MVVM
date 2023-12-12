@@ -15,5 +15,9 @@
     <activity
         android:id="@+id/detailActivity"
         android:name="com.example.food_app_mvvm.ui.detail.DetailActivity"
-        android:label="DetailActivity" />
+        android:label="DetailActivity" >
+        <argument
+            android:name="mealId"
+            app:argType="string" />
+    </activity>
 </navigation>
