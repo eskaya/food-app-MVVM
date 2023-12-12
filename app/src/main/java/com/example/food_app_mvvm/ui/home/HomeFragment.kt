@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
 import com.example.food_app_mvvm.databinding.FragmentHomeBinding
 import com.example.food_app_mvvm.ui.MainActivity
@@ -42,9 +43,13 @@ class HomeFragment : Fragment() {
 
     private fun listeners() {
         binding.ivRandomMeal.setOnClickListener {
+            /*
             val intent = Intent((requireContext() as MainActivity), DetailActivity::class.java)
             intent.putExtra(Constants.MEAL_ID, mealId)
             startActivity(intent)
+             */
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailActivity()
+            Navigation.findNavController(it).navigate(action)
         }
     }
 

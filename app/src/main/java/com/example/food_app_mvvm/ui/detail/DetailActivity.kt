@@ -29,7 +29,8 @@ class DetailActivity : AppCompatActivity() {
 
     private fun init() {
         binding.progressBar.visibility = View.VISIBLE
-        mealId = intent.getStringExtra(Constants.MEAL_ID).toString()
+       // mealId = intent.getStringExtra(Constants.MEAL_ID).toString()
+        mealId = "52982"
         viewModel.getMealDetail(mealId)
         observerMealDetail()
     }
